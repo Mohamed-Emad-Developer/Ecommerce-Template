@@ -1,11 +1,19 @@
 let section = document.querySelector(".statistics section");
 const nums = document.querySelectorAll(".s-content h3.num");
 let start = false;
+
+document.querySelector(".header").addEventListener("mouseenter", () => {
+  document.querySelector(".header").style.background = "#333";
+});
+document.querySelector(".header").addEventListener("mouseleave", () => {
+  document.querySelector(".header").style.background = "#333333d6";
+});
 window.onscroll = function () {
   if (window.scrollY >= 500) {
-    console.log(document.querySelector(".go-up"));
+    document.querySelector(".header").style.background = "#333333d6";
     document.querySelector(".go-up").style.transform = "scale(1)";
   } else {
+    document.querySelector(".header").style.background = "#333";
     document.querySelector(".go-up").style.transform = "scale(0)";
   }
   if (window.scrollY >= section.offsetTop) {
